@@ -1,0 +1,203 @@
+.job-list-heading {
+  .heading {
+    font-family: $noto-bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: $size-32;
+    line-height: 37px;
+    color: $black-color;
+    margin-bottom: 5px;
+
+    &-sub-link {
+      display: inline-block;
+      margin-bottom: 22px;
+      font-family: $noto-bold;
+      font-style: normal;
+      font-weight: bold;
+      font-size: $size-14;
+      line-height: 16px;
+      color: $link-color;
+    }
+  }
+
+  .right-icons {
+    text-align: right;
+    margin-top: -60px;
+    margin-bottom: -4px;
+  }
+}
+
+.job-wrapper {
+  .card-listing {
+    margin-bottom: 86px;
+    .custom-card {
+      @include wrapper(440px);
+      margin-bottom: 16px;
+      .card {
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.12);
+        border-radius: 24px;
+        &-head {
+          border-top-right-radius: 24px;
+          border-top-left-radius: 24px;
+        }
+        &-body {
+          padding: 18px;
+          padding-bottom: 5px;
+          .card-title {
+            @extend .card-box-title;
+          }
+          .card-text,
+          .amenities {
+            @extend .card-box-text;
+          }
+        }
+
+        &-footer-btn {
+          padding: 6px 7px;
+
+          .btn-group {
+            width: 100%;
+            .custom-card-btn {
+              border-radius: 52px;
+              border-color: $btn-border-color;
+              font-family: $noto-bold;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 16px;
+              line-height: 22px;
+              color: $black-lighten-color;
+              box-shadow: none;
+              &:hover {
+                background: $transparent-color;
+              }
+              &:focus,
+              &:not(:disabled):not(.disabled):active:focus {
+                box-shadow: none;
+              }
+            }
+            & > .btn:not(:last-child):not(.dropdown-toggle) {
+              border-top-right-radius: 0;
+              border-bottom-right-radius: 0;
+            }
+            & > .btn:not(:first-child) {
+              border-top-left-radius: 0;
+              border-bottom-left-radius: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.job-details-wrapper {
+  &-without-btn {
+    margin-bottom: -60px;
+  }
+
+  .back {
+    .btn-circle {
+      img {
+        top: 0px;
+      }
+    }
+  }
+}
+
+.job-details-wrapper {
+  .job-heading {
+    .card-title {
+      @extend .card-box-title;
+    }
+
+    .card-text {
+      @extend .card-box-text;
+    }
+  }
+}
+
+.job-details-wrapper {
+  .amenity-details {
+    .amenity-list {
+      margin-bottom: 15px;
+      @extend .list-box-text;
+
+      img {
+        vertical-align: text-bottom;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.job-details-wrapper {
+  .job-requirements {
+    &-heading {
+      @extend .box-heading-1;
+    }
+
+    .job-requirements-list {
+      margin-bottom: 15px;
+      @extend .list-box-text-2;
+
+      img {
+        vertical-align: text-bottom;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.job-details-wrapper {
+  .job-status {
+    .timeline-list {
+      .status {
+        @extend .card-box-text;
+
+        &-time {
+          @extend .card-box-text-2;
+        }
+      }
+
+      .t-list {
+        position: relative;
+
+        &::before {
+          content: '';
+          border-left: 1px solid $secondary-color;
+          position: absolute;
+          height: 80%;
+          left: 10px;
+          top: 23px;
+        }
+
+        &:last-child {
+          &::before {
+            border: 0px;
+          }
+        }
+
+        img {
+          position: absolute;
+        }
+
+        .t-status {
+          padding-left: 35px;
+        }
+      }
+    }
+  }
+}
+
+.job-details-wrapper {
+  .view-timeline {
+    padding-left: 35px;
+
+    .btn-secondary:hover {
+      background-color: $transparent-color;
+      border-color: $btn-border-color;
+    }
+  }
+}

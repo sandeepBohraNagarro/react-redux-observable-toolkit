@@ -1,0 +1,17 @@
+.home-btn-container {
+  display: flex;
+  margin: auto 0;
+  align-items: baseline;
+  button {
+    height: 42px;
+  }
+}
+
+.imageCrousel {
+  margin: 30px -24px 0 -24px;
+  position: relative;
+  z-index: 1;
+  img {
+    width: 100%;
+  }
+}

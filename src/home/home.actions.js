@@ -7,3 +7,7 @@ export const fetchJobSeekerAndJobCount = createAction(
 export const fetchJobSeekerAndJobsCountFulfilled = createAction(
   '[Home] Fetch Job Seeker and Jobs Count Fulfilled'
 );
+
+export const fetchJobSeekerAndJobsCountFailed = createAction(
+  '[Home] Fetch Job Seeker and Jobs Count Failed'
+);

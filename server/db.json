@@ -1,8 +1,9 @@
 {
-  "jobs-count": {
+  "job-seeker-and-jobs-count": {
     "data": {
       "type": "number",
-      "totalCount": "10,00,000+"
+      "totalJobsCount": "20,000",
+      "totalJobSeeker": "1,00,000"
     }
   }
 }

@@ -1,0 +1,23 @@
+/** Add Boostrap Styles */
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+/** Load Style Modules */
+@import 'fonts/index.scss';
+@import 'base/index.scss';
+@import 'controls/index.scss';
+@import 'misc/index.scss';
+@import 'modules/index.scss';
+@import 'controls/popup.scss';
+
+#root {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
