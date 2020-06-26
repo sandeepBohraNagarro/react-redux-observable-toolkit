@@ -12,9 +12,9 @@ reducers[homeActions.fetchJobSeekerAndJobsCountFulfilled] = function (
   state,
   action
 ) {
-  const { jobsCount, jobSeekersCount } = action.payload;
-  state.jobsCount = jobsCount;
-  state.jobSeekerCount = jobSeekersCount;
+  const { totalJobsCount, totalJobSeeker } = action.payload;
+  state.jobsCount = totalJobsCount;
+  state.jobSeekerCount = totalJobSeeker;
 };
 
 export default createReducer(initialState, reducers);

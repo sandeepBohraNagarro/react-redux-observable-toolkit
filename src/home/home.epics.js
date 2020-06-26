@@ -2,14 +2,15 @@ import { ofType } from 'redux-observable';
 import { switchMap, mergeMap, catchError, map } from 'rxjs/operators';
 import { fromFetch } from 'rxjs/fetch';
 import { of } from 'rxjs';
-import lodashGet from 'lodash.get';
 import * as homeActions from 'home/home.actions';
 import { constructApiEndpoint } from 'common/utils/api';
 import { API_ENDPOINTS } from 'common/constants';
 import { constructError } from 'common/utils/error';
 
 function fetchJobSeekerAndJobsCount$() {
-  const endpoint = constructApiEndpoint(API_ENDPOINTS.JOBS_COUNT);
+  const endpoint = constructApiEndpoint(
+    API_ENDPOINTS.JOB_SEEKER_AND_JOBS_COUNT
+  );
   return fromFetch(endpoint).pipe(
     switchMap((response) => {
       if (response.ok) {
@@ -33,11 +34,11 @@ export function fetchJobSeekerAndJobCountEpic(action$) {
     ofType(homeActions.fetchJobSeekerAndJobCount),
     mergeMap(() => {
       return fetchJobSeekerAndJobsCount$().pipe(
-        map((response) => lodashGet(response, 'data.totalJobsCount', 0))
+        map((response) => response.data)
       );
     }),
-    mergeMap((error) => {
-      homeActions.fetchJobSeekerAndJobsCountFailed(error);
+    mergeMap((data) => {
+      return of(homeActions.fetchJobSeekerAndJobsCountFulfilled(data));
     })
   );
 }

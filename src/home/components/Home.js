@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as homeActions from 'home/home.actions';
 import logo from 'assets/logo/ic-logo-small.svg';
 import carousel1 from 'assets/images/carousel-1.png';
@@ -37,14 +37,25 @@ const styles = {
 export default function Home() {
   const dispatch = useDispatch();
 
+  const jobsCount = useSelector((state) => state.home.jobsCount);
+  const jobSeekerCount = useSelector((state) => state.home.jobSeekerCount);
+  /**
+   * Fetches job seeker and jobs count
+   */
   useEffect(() => {
     dispatch(homeActions.fetchJobSeekerAndJobCount());
   });
 
+  /**
+   * Navigate to employer login page
+   */
   function hirePeople() {
     history.push(APP_ROUTES.EMPLOYER_LOGIN);
   }
 
+  /**
+   * Navigate to employee login
+   */
   function findJob() {
     history.push(APP_ROUTES.SEEKER_LOGIN);
   }
@@ -62,7 +73,7 @@ export default function Home() {
             <img src={carousel1} alt="carousel-1" />
           </div>
           <div style={styles.seekersAndJobs} className="text-center mt-3">
-            1,00,00 seekers, 20,000 jobs
+            {`${jobSeekerCount} seekers, ${jobsCount} jobs`}
           </div>
           <div className="sub-heading text-center mt-2">
             Unnati helps Indian workers find jobs across employers all over the

@@ -26,8 +26,8 @@ export function replaceUrlWithPathParams(url, pathParamsObj) {
  */
 export function constructApiEndpoint(path = '', pathParamsObj) {
   const baseUrl = process.env.REACT_APP_BASE_API_URL;
-  const apiVersion = process.env.REACT_APP_API_VERSION;
-  let url = `${baseUrl}/${apiVersion}/api/${path}`;
+  // const apiVersion = process.env.REACT_APP_API_VERSION;
+  let url = `${baseUrl}/${path}`;
   if (pathParamsObj) {
     url = replaceUrlWithPathParams(url, pathParamsObj);
   }
